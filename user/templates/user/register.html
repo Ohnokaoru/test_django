@@ -1,21 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block title %}註冊頁面{% endblock %}
+{% block style %}
+<style>
+    form {
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>註冊頁面</title>
-</head>
+        width: 60%;
+        margin: auto;
+        text-align: start;
 
-<body>
-    <h1>Register</h1>
-    <form action="" method="post">
-        <!-- csrf_token為跨越安全請求 -->
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">註冊</button>
-    </form>
-    <p style="color: red;">{{message}}</p>
-</body>
+    }
 
-</html>
+    button {
+        margin: auto;
+        width: 60px;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Register</h1>
+<form action="" method="post">
+    <!-- csrf_token為跨越安全請求 -->
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">註冊</button>
+</form>
+{% endblock %}

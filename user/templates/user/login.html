@@ -1,30 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block title %}登入頁面{% endblock %}
+{% block style %}
+<style>
+    button {
+        background-color: rgb(205, 152, 152);
+    }
+</style>
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-    <h1>Login</h1>
-    <form action="" method="POST">
-        <!-- 方法為post，後面一定要加 csrf_token-->
-        {% csrf_token %}
-        <label for="id-username">帳號</label>
-        <input type="text" name="username" id="id-username" /><br />
-        <label for="id-password">密碼</label>
-        <input type="password" name="password" id="id-password" /><br />
-        <p>
-            <!-- 兩個以上的submit就不能用 button 要用input -->
-            <input type="submit" name="login" value="登入"></button>
-            <input type="submit" name="register" value="註冊"></button>
-            <button type="reset">清除</button>
-        </p>
-    </form>
-    <p id="message">{{message}}</p>
 
-</body>
+{% block content %}
 
-</html>
+<h1>Login</h1>
+<form action="" method="POST">
+    <!-- 方法為post，後面一定要加 csrf_token-->
+    {% csrf_token %}
+    <label for="id-username">帳號</label>
+    <input type="text" name="username" id="id-username" /><br />
+    <label for="id-password">密碼</label>
+    <input type="password" name="password" id="id-password" /><br />
+    <p>
+        <!-- 兩個以上的submit就不能用 button 要用input -->
+        <input type="submit" name="login" value="登入"></button>
+        <input type="submit" name="register" value="註冊"></button>
+        <button type="reset">清除</button>
+    </p>
+</form>
+
+{% endblock %}
