@@ -2,7 +2,41 @@
 {% block title %}首頁{% endblock %}
 {% block style %}
 <style>
+    .todo-list {
+        background-color: rgb(246, 247, 242);
+        margin: 1rem;
+        padding: 0px 0px 10px 0px;
 
+
+
+    }
+
+    p {
+        background-color: rgb(143, 155, 199);
+    }
+
+    h3 {
+        color: rgb(205, 53, 53);
+    }
+
+    .text {
+        background-color: rgb(205, 205, 164);
+        margin: 10px;
+        padding: 10px;
+        border-radius: 3px;
+
+    }
+
+    li {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        list-style: none;
+    }
+
+    span {
+        color: rgb(246, 92, 92);
+    }
 </style>
 {% endblock %}
 
@@ -11,6 +45,29 @@
 {% block content %}
 
 <h1>Todolist</h1>
+{% for todo in todos %}
+<div class="todo-list">
+    <p>{{todo.created}}</p>
 
+    <h3>{{todo.title}}
+        {% if todo.important %}
+        (重要)
+        {% endif %}
+    </h3>
+    <div class="text">
+        <li>{{todo.text}}</li>
+        <li>
+            <span>
+                {% if todo.date_copmlated%}
+                (完成)
+                {% else %}
+                (未完成)
+                {% endif %}
+            </span>
+        </li>
+
+    </div>
+</div>
+{% endfor %}
 
 {% endblock %}
