@@ -16,14 +16,11 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
-from app import views
+from django.urls import path
+
+# 本地的
+from . import views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("hi", views.index),
-    path("stocks/", views.get_stocks),
-    # 導到/user/底下的一個路由(user.urls)，剩下路徑給下一個路由的urls.py給
-    path("user/", include("user.urls")),
-    path("", include("todo.urls")),
+    path("", views.todo, name="todo"),
 ]
