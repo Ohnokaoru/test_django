@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}待辦事項{% endblock %}
+{% block style %}
+<style>
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Todo</h1>
+{{todo}}
+
+<br>
+<a href="{% url 'todo' %}">待辦首頁</a>
+{% endblock %}

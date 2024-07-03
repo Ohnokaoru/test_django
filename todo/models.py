@@ -16,4 +16,4 @@ class Todo(models.Model):
 
     # 更改顯示
     def __str__(self):
-        return f"{self.title}-{self.created}"
+        return f"{self.id} -{self.title} -({self.user}) -{self.created}"

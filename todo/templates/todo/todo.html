@@ -49,7 +49,7 @@
 <div class="todo-list">
     <p>{{todo.created}}</p>
 
-    <h3>{{todo.title}}
+    <h3><a href="{% url 'view-todo' todo.id %}">{{todo.title}}</a>
         {% if todo.important %}
         (重要)
         {% endif %}
