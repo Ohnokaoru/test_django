@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 
 # 建立註冊form表單
 # Create your views here.
 
 
+@login_required
 # 登入後會出現profile
 def user_profile(request):
     print(request.user)
@@ -43,6 +45,7 @@ def user_login(request):
 
 
 # log out
+@login_required
 def user_logout(request):
     logout(request)
     return redirect("login")
