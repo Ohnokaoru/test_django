@@ -117,3 +117,19 @@ def completed_todo_byid(request, id):
         print(e)
 
     return redirect("todo")
+
+
+login_required
+
+
+def uncompleted_todo_byid(request, id):
+    try:
+        todo = Todo.objects.get(id=id)
+        todo.completed = False
+        todo.date_copmlated = None
+        todo.save()
+
+    except Exception as e:
+        print(e)
+
+    return redirect("todo")
