@@ -76,6 +76,7 @@
 
 </div>
 
+<a href="{% url 'completed_todo_byid' todo.id %}" onclick="return confirmCCompleted()">完成</a>
 <a href="{% url 'delete_todo' todo.id %}" onclick="return confirmDelete()">刪除</a>
 {% endfor %}
 

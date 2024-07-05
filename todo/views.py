@@ -33,7 +33,9 @@ def create_todo(request):
 def todo(request):
     todos = None
     if request.user.is_authenticated:
-        todos = Todo.objects.filter(user=request.user).order_by("-created")
+        todos = Todo.objects.filter(user=request.user, completed=False).order_by(
+            "-created"
+        )
         print(todos)
     return render(request, "todo/todo.html", {"todos": todos})
 
@@ -96,6 +98,20 @@ def delete_todo(request, id):
     try:
         todo = Todo.objects.get(id=id)
         todo.delete()
+
+    except Exception as e:
+        print(e)
+
+    return redirect("todo")
+
+
+@login_required
+def completed_todo_byid(request, id):
+    try:
+        todo = Todo.objects.get(id=id)
+        todo.completed = True
+        todo.date_copmlated = datetime.now()
+        todo.save()
 
     except Exception as e:
         print(e)
