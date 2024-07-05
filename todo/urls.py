@@ -32,4 +32,9 @@ urlpatterns = [
         views.completed_todo_byid,
         name="completed_todo_byid",
     ),
+    path(
+        "uncompleted_todo'/<int:id>",
+        views.uncompleted_todo_byid,
+        name="uncompleted_todo",
+    ),
 ]
