@@ -119,9 +119,7 @@ def completed_todo_byid(request, id):
     return redirect("todo")
 
 
-login_required
-
-
+@login_required
 def uncompleted_todo_byid(request, id):
     try:
         todo = Todo.objects.get(id=id)
