@@ -88,18 +88,18 @@ DATABASES = {
 }
 
 # mysql
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "todolist",
-        "USER": "root",
-        "PASSWORD": "52310425",
-        # "HOST": "127.0.0.1",
-        # aws ip
-        "HOST": "database-1.cpuew4wio2yy.ap-southeast-2.rds.amazonaws.com",
-        "PORT": "3306",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "todolist",
+#         "USER": "root",
+#         "PASSWORD": "52310425",
+#         # "HOST": "127.0.0.1",
+#         # aws ip
+#         "HOST": "database-1.cpuew4wio2yy.ap-southeast-2.rds.amazonaws.com",
+#         "PORT": "3306",
+#     }
+# }
 
 
 # Password validation

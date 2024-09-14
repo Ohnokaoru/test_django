@@ -11,7 +11,7 @@ class Todo(models.Model):
     date_copmlated = models.DateTimeField(blank=True, null=True)
     important = models.BooleanField(default=False)
 
-    # user_id <=> todo_id
+    # 一對多關聯:Todo的user欄位會與User的user做關聯，如果是要關聯User其他欄位，to_field='ABC'
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     completed = models.BooleanField(default=False)
